@@ -8,8 +8,15 @@ import Close from './components/Operation/close';
 import Movements from './components/Movements/Movements';
 import { useSelector } from 'react-redux';
 import { selectorIsLogin } from './components/store/IsLogin/isLogin.selector';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setIsLogin } from './components/store/IsLogin/islogin.action';
 function App() {
   const isLogin = useSelector(selectorIsLogin)
+  const dispatch = useDispatch()
+  // useEffect(()=>{
+  //     dispatch(setIsLogin(false))
+  // },[])
   return (
         <div>
         <Navigation></Navigation>
