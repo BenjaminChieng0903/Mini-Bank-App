@@ -1,0 +1,1 @@
+export const selectorIsLogin = (state)=>state.isLogin.LoginState

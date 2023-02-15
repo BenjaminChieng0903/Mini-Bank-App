@@ -6,11 +6,14 @@ import Transfer from './components/Operation/transfer';
 import Loan from './components/Operation/loan';
 import Close from './components/Operation/close';
 import Movements from './components/Movements/Movements';
+import { useSelector } from 'react-redux';
+import { selectorIsLogin } from './components/store/IsLogin/isLogin.selector';
 function App() {
+  const isLogin = useSelector(selectorIsLogin)
   return (
         <div>
         <Navigation></Navigation>
-        <main className='app'>
+      { isLogin && <main className='app'>
         <Balance/>
         <Movements/>
         <Summary/>
@@ -18,6 +21,7 @@ function App() {
         <Loan/>
         <Close/>
         </main>
+}
         </div>
   );
 }
