@@ -1,11 +1,11 @@
 import './App.css';
 import Navigation from './components/Navigation/navigation';
 import Balance from './components/Balance/balance';
-import Movements from './components/Movements/movments';
 import Summary from './components/Summary/summary';
 import Transfer from './components/Operation/transfer';
 import Loan from './components/Operation/loan';
 import Close from './components/Operation/close';
+import Movements from './components/Movements/Movements';
 function App() {
   return (
         <div>

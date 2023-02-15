@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import './navigationStyle.css'
 import '../../script'
-import accounts from '../../script'
-import { containerApp, inputLoginUsername, inputLoginPin } from '../../script'
+import { accounts} from '../../script'
+import Movements from '../Movements/Movements';
+import { setCurrentUser } from '../store/user/user.action';
+
+const inputLoginUsername = document.querySelector('.login__input--user');
+const inputLoginPin = document.querySelector('.login__input--pin');
+const containerApp = document.querySelector('.app');
 const Navigation = ()=>{
 const [user, setUser] = useState('')
 const [pin, setPin] = useState('')
@@ -13,14 +18,23 @@ const reformatUserName = (accs)=>{
 }
 
 
+
 const Login = function (e){
     e.preventDefault()
     reformatUserName(accounts)
     console.log(accounts)
+    // console.log(containerApp)
+    // console.log(inputLoginUsername)
+    // console.log(inputLoginPin)
     const filteredUser = accounts.filter((account)=> account.username === user)
     filteredUser.forEach((currentUser)=>{
            if(currentUser.pin === +pin){
             containerApp.style.opacity = 100
+            
+            //display UI
+            console.log(currentUser)
+            setCurrentUser(currentUser)
+
     }
     })
     inputLoginUsername.value = ''

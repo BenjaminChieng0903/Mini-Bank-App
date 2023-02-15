@@ -1,9 +1,11 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
+
 import './App.css'
 import './components/Navigation/navigationStyle.css'
 // Data
+
 const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -34,7 +36,6 @@ const account4 = {
 
 const accounts = [account1, account2, account3, account4];
 
-export default accounts
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -57,7 +58,6 @@ const btnSort = document.querySelector('.btn--sort');
 
 const inputLoginUsername = document.querySelector('.login__input--user');
 const inputLoginPin = document.querySelector('.login__input--pin');
-export{containerApp,inputLoginUsername, inputLoginPin}
 
 const inputTransferTo = document.querySelector('.form__input--to');
 const inputTransferAmount = document.querySelector('.form__input--amount');
@@ -77,4 +77,6 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+
+export {accounts, containerApp, inputLoginUsername, inputLoginPin};
 /////////////////////////////////////////////////
