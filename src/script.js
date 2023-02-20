@@ -36,6 +36,7 @@ const account4 = {
 
 const accounts = [account1, account2, account3, account4];
 
+ 
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -78,5 +79,5 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
-export {accounts, containerApp, inputLoginUsername, inputLoginPin};
+export {accounts, containerApp, inputLoginUsername, inputLoginPin}
 /////////////////////////////////////////////////

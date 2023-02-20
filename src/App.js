@@ -10,13 +10,18 @@ import { useSelector } from 'react-redux';
 import { selectorIsLogin } from './components/store/IsLogin/isLogin.selector';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setIsLogin } from './components/store/IsLogin/islogin.action';
+import { GetAccounts, setAccountUsername } from './components/store/accounts/accounts.action';
+import { accounts } from './script';
+// import { setIsLogin } from './components/store/IsLogin/islogin.action';
+
 function App() {
   const isLogin = useSelector(selectorIsLogin)
   const dispatch = useDispatch()
-  // useEffect(()=>{
-  //     dispatch(setIsLogin(false))
-  // },[])
+  useEffect(()=>{
+      dispatch(GetAccounts(accounts))
+      dispatch(setAccountUsername(accounts))
+  },[])
+
   return (
         <div>
         <Navigation></Navigation>

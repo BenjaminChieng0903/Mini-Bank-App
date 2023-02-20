@@ -1,0 +1,1 @@
+export const selectorAccounts = (state)=>state.accounts.accounts
