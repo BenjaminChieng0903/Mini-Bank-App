@@ -7,12 +7,12 @@ export const GetAccounts = (accounts)=>{
 
 export const setTransfer = (accounts, currentUser, transferTo, amount)=>{
     // accounts.find((acc)=>acc.)
-   const transfer = accounts.map(({username, movements, pin, owner})=>{
+   const transfer = accounts.map(({interestRate, username, movements, pin, owner})=>{
         if(username === transferTo){
-       return {username,pin, owner,'movements':[...movements, amount]}}
+       return {interestRate, username,pin, owner,'movements':[...movements, amount]}}
         if (username === currentUser){
-       return {username,pin, owner,'movements':[...movements, -amount]}}  
-        else  return {username, movements, pin, owner}
+       return {interestRate, username,pin, owner,'movements':[...movements, -amount]}}  
+        else  return {interestRate, username, movements, pin, owner}
    }  )
    return CreateAction(ACCOUNTS_TYPE.SET_TRANSFER, transfer)
 }

@@ -18,7 +18,10 @@ function App() {
   const isLogin = useSelector(selectorIsLogin)
   const dispatch = useDispatch()
   useEffect(()=>{
+    //get accounts data/ we use test data right here, maybe we will get the json data
+    //from other api.
       dispatch(GetAccounts(accounts))
+      //set the username for each data element
       dispatch(setAccountUsername(accounts))
   },[])
 

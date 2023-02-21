@@ -20,8 +20,8 @@ const Transfer = ()=>{
         e.preventDefault()
         console.log(transferTo)
         const amountNum = +amount
-        console.log(amountNum)
-        console.log(CalBalance(currentUser))
+        // console.log(amountNum)
+        // console.log(CalBalance(currentUser))
         if( 0 < amountNum && amountNum < CalBalance(currentUser)){
         dispatch(setCurrentUserTransfer(currentUser, amountNum))
         dispatch(setTransfer(accounts, currentUser.username, transferTo, amountNum))

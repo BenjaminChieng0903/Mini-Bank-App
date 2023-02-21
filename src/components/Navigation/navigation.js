@@ -10,8 +10,8 @@ import { filteredUser, filteredUserByusername } from '../../utils/filterUser';
 import { findUserByusername } from '../../utils/findUser';
 import { setAccountUsername } from '../store/accounts/accounts.action';
 import { selectorAccounts } from '../store/accounts/accounts.selector';
-// const inputLoginUsername = document.querySelector('.login__input--user');
-// const inputLoginPin = document.querySelector('.login__input--pin');
+const inputLoginUsername = document.querySelector('.login__input--user');
+const inputLoginPin = document.querySelector('.login__input--pin');
 // const containerApp = document.querySelector('.app');
 // export const reformatUserName = (accs)=>{
 //     accs.forEach((acc)=> {
@@ -40,13 +40,12 @@ const Login = function (e){
     // console.log(user)
     console.log(currentUser)
            if(currentUser.pin === +pin){
-            // containerApp.style.opacity = 100
             
-            //display UI
-            // console.log(currentUser)
+            inputLoginPin.value =''
+            inputLoginUsername.value = ''
+            // log in successfully, set current user and display individual surface
            dispatch(setCurrentUser(currentUser)) 
            dispatch(setIsLogin(true))
-            // setIsLogin(true)
 
     }
     // inputLoginUsername.value = ''
