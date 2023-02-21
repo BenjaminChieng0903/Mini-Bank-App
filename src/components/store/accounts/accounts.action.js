@@ -16,7 +16,14 @@ export const setTransfer = (accounts, currentUser, transferTo, amount)=>{
    }  )
    return CreateAction(ACCOUNTS_TYPE.SET_TRANSFER, transfer)
 }
-
+export const setLoan = (accounts, currentUser, amount)=>{
+    const loan = accounts.map(
+        ({interestRate, username, movements, pin, owner})=>
+        username === currentUser.username ? {interestRate, username,pin, owner,'movements':[...movements, amount]}
+        :{interestRate, username, movements, pin, owner}
+    )
+    return CreateAction(ACCOUNTS_TYPE.SET_LOAN, loan)
+}
 
  const FindUser = (accounts)=>{
     return accounts.map((acc)=>{

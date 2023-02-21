@@ -11,6 +11,8 @@ import { selectorAccounts } from '../store/accounts/accounts.selector'
 import { setTransfer } from '../store/accounts/accounts.action'
 import { setCurrentUser, setCurrentUserTransfer } from '../store/user/user.action'
 const Transfer = ()=>{
+    const inputTransferTo = document.querySelector('.form__input--to');
+    const inputTransferAmount = document.querySelector('.form__input--amount');
     const accounts = useSelector(selectorAccounts)
     const [transferTo, setTransferTo] = useState('')
     const [amount, setAmount] = useState('')
@@ -20,6 +22,9 @@ const Transfer = ()=>{
         e.preventDefault()
         console.log(transferTo)
         const amountNum = +amount
+
+        inputTransferTo.value =''
+        inputTransferAmount.value =''
         // console.log(amountNum)
         // console.log(CalBalance(currentUser))
         if( 0 < amountNum && amountNum < CalBalance(currentUser)){

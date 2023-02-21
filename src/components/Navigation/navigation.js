@@ -42,7 +42,7 @@ const Login = function (e){
            if(currentUser.pin === +pin){
             
             inputLoginPin.value =''
-            inputLoginUsername.value = ''
+            inputLoginUsername.value =''
             // log in successfully, set current user and display individual surface
            dispatch(setCurrentUser(currentUser)) 
            dispatch(setIsLogin(true))
