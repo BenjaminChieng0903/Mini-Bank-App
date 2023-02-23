@@ -13,6 +13,8 @@ export const AccountsReducer = (state = ACCOUNTS_INITIAL_STATE, action)=>{
             return {...state, accounts:payload}
         case ACCOUNTS_TYPE.SET_LOAN:
             return {...state, accounts:payload}
+        case ACCOUNTS_TYPE.DELETE_ACCOUNT:
+            return {...state, accounts:payload}
          default: return state
     }
 }

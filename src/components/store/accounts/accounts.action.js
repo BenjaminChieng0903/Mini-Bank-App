@@ -1,4 +1,6 @@
 import { CreateAction } from "../../../utils/createAction"
+import { findUserByusername } from "../../../utils/findUser"
+import { findUserIndexByusername } from "../../../utils/findUserIndex"
 import { ACCOUNTS_TYPE } from "./accounts.type"
 
 export const GetAccounts = (accounts)=>{
@@ -37,4 +39,13 @@ export const setAccountUsername = (accounts)=>{
     // account.username = user
     // console.log(accountsWithUsername)
     return CreateAction(ACCOUNTS_TYPE.SET_USERNAME, account)
+}
+
+
+export const deleteAccount = (accs, username)=>{
+
+    const deletedAccountIndex = findUserIndexByusername(accs, username)
+    accs.splice(deletedAccountIndex, 1)
+
+    return CreateAction(ACCOUNTS_TYPE.DELETE_ACCOUNT, accs)
 }
