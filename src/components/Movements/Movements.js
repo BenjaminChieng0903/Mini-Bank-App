@@ -10,7 +10,7 @@ const Movements = ()=>{
     console.log(movements)
     return(
         <div className='movements'>
-         {movements.map((mov)=> <Movement mov = {mov}/>)}
+         {movements.map((mov, index)=> <Movement mov = {mov} index = {index}/>)}
         </div>
     )
     

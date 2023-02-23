@@ -13,3 +13,8 @@ export const setCurrentUserLoan = ({username, pin, interestRate, owner, movement
     return CreateAction(USER_ACTION_TYPE.SET_CURRENT_LOAN, {username, pin, interestRate, owner,
         'movements':[...movements, loanAmount]})
 }
+export const movementsSort = ({username, pin, interestRate, owner, movements})=> {
+    const sortedMovements = movements.sort((a,b)=>b-a)
+    return CreateAction(USER_ACTION_TYPE.SORT_MOVEMENTS, {username, pin, interestRate, owner, 
+    'movements': sortedMovements} )
+}
