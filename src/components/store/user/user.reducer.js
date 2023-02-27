@@ -11,8 +11,8 @@ export const userReducer = (state = USER_INITIAL_STATE, action)=>{
             return {...state, currentUser: payload}
         case USER_ACTION_TYPE.SET_CURRENT_LOAN:
             return {...state, currentUser: payload}
-        case USER_ACTION_TYPE.SORT_MOVEMENTS:
-            return {...state, currentUser: payload}
+        // case USER_ACTION_TYPE.SORT_MOVEMENTS:
+        //     return {...state, currentUser: payload}
          default: return state
     }
 }

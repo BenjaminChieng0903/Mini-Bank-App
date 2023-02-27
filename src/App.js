@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { GetAccounts, setAccountUsername } from './components/store/accounts/accounts.action';
 import { accounts } from './script';
+import { setCurrentUser } from './components/store/user/user.action';
 // import { setIsLogin } from './components/store/IsLogin/islogin.action';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       dispatch(GetAccounts(accounts))
       //set the username for each data element
       dispatch(setAccountUsername(accounts))
+
   },[])
 
   return (
@@ -31,7 +33,6 @@ function App() {
       { isLogin && <main className='app'>
         <Balance/>
         <Movements/>
-        <Summary/>
         <Transfer/>
         <Loan/>
         <Close/>

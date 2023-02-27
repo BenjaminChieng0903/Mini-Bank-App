@@ -7,6 +7,7 @@ const Balance = ()=>{
     // const balance = currentUser.movements.reduce((acc, item)=>{
     //     return acc + item;
     // }, 0)
+    
     const balance = CalBalance(currentUser)
     // currentUser.balance = balance
     // console.log(currentUser)

@@ -12,6 +12,7 @@ import { setAccountUsername } from '../store/accounts/accounts.action';
 import { selectorAccounts } from '../store/accounts/accounts.selector';
 const inputLoginUsername = document.querySelector('.login__input--user');
 const inputLoginPin = document.querySelector('.login__input--pin');
+
 // const containerApp = document.querySelector('.app');
 // export const reformatUserName = (accs)=>{
 //     accs.forEach((acc)=> {
@@ -31,16 +32,12 @@ const Login = function (e){
     // reformatUserName(accounts)
     e.preventDefault()
     console.log(accounts)
-    // console.log(accounts)
-    // console.log(containerApp)
-    // console.log(inputLoginUsername)
-    // console.log(inputLoginPin)
     // const currentUser = findUserByusername(accounts, user)
     const currentUser = accounts.find((acc)=>acc.username&& acc.username === user )
     // console.log(user)
+    // console.log(+pin)
     console.log(currentUser)
            if(currentUser.pin === +pin){
-            
             inputLoginPin.value =''
             inputLoginUsername.value =''
             // log in successfully, set current user and display individual surface
@@ -48,6 +45,7 @@ const Login = function (e){
            dispatch(setIsLogin(true))
 
     }
+
     // inputLoginUsername.value = ''
     // inputLoginPin.value = ''
  
