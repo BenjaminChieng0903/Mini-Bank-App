@@ -29,7 +29,6 @@ const accounts = useSelector(selectorAccounts)
 const dispatch = useDispatch()
 // console.log(accounts)
 const Login = function (e){
-    // reformatUserName(accounts)
     e.preventDefault()
     console.log(accounts)
     // const currentUser = findUserByusername(accounts, user)
